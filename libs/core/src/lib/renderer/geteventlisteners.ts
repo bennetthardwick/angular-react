@@ -8,8 +8,8 @@
  * @note Taken and modified from https://github.com/colxi/getEventListeners to be compiled into ES5, allowing running in older browsers
  **/
 
-Element.prototype['_addEventListener'] = Element.prototype.addEventListener;
-Element.prototype['_removeEventListener'] = Element.prototype.removeEventListener;
+Element.prototype['_addEventListener'] = Element.prototype['_addEventListener'] || Element.prototype.addEventListener;
+Element.prototype['_removeEventListener'] = Element.prototype['_removeEventListener'] || Element.prototype.removeEventListener;
 
 Element.prototype.addEventListener = function<K extends keyof ElementEventMap>(
   type: K,
